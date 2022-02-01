@@ -1,0 +1,19 @@
+<html>
+<body>
+<p>modprobe ipv6</p>
+<p>ip tunnel add he-ipv6 mode sit remote 216.218.221.42 local 117.51.146.125 ttl 255</p>
+<p>ip link set he-ipv6 up</p>
+<p>ip addr add 2001:470:35:62c::2/64 dev he-ipv6</p>
+<p>ip route add ::/0 dev he-ipv6</p>
+<p>ip -f inet6 addr</p>
+<p></p>
+<hr />
+<p></p>
+<p>ifconfig gif0 create</p>
+<p>ifconfig gif0 tunnel 117.51.146.125 216.218.221.42</p>
+<p>ifconfig gif0 inet6 2001:470:35:62c::2 2001:470:35:62c::1 prefixlen 128</p>
+<p>route -n add -inet6 default 2001:470:35:62c::1</p>
+<hr />
+<a href="https://wangchujiang.com/linux-command/c/ip.html">https://wangchujiang.com/linux-command/c/ip.html</a>
+</body>
+</html>
